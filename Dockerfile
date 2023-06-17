@@ -26,5 +26,3 @@ RUN a2enmod rewrite remoteip && a2dismod deflate -f
 RUN set -x && curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer \
     && composer self-update 2.2.9
-
-EXPOSE 80
