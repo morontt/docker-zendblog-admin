@@ -1,4 +1,4 @@
-FROM php:7.3-apache-buster
+FROM php:7.4-apache-buster
 
 MAINTAINER Alexander Harchenko <morontt@gmail.com>
 

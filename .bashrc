@@ -23,7 +23,7 @@ alias domist="php app/console doctrine:migrations:status"
 alias dofilo="php app/console doctrine:fixtures:load --no-interaction"
 alias rodeb="php app/console debug:router"
 alias codeb="php app/console debug:container --show-private"
-alias dosup="php app/console doctrine:schema:update"
+alias dosup="php app/console doctrine:schema:update --dump-sql"
 alias dogeen="php app/console doctrine:generate:entities"
 alias sf="php app/console"
 
