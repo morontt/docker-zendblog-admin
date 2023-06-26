@@ -13,6 +13,7 @@ COPY ./custom-apt.sh /tmp/custom-apt.sh
 RUN bash /tmp/custom-apt.sh
 
 RUN docker-php-ext-install -j$(nproc) intl zip pdo_mysql opcache \
+    gmp \
     && pecl install imagick \
     && docker-php-ext-enable imagick
 

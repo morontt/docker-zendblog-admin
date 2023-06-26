@@ -7,6 +7,7 @@ apt-get update && apt-get install -y --no-install-recommends \
     libzip-dev \
     python3-setuptools \
     python3-pygments \
+    libgmp-dev \
     ;
 
 apt-get clean
