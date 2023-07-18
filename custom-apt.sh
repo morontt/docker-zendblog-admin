@@ -13,3 +13,7 @@ apt-get update && apt-get install -y --no-install-recommends \
 apt-get clean
 
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+curl -L -o /tmp/cavif.deb https://github.com/kornelski/cavif-rs/releases/download/v1.5.3/cavif_1.5.3_amd64.deb \
+    && dpkg -i /tmp/cavif.deb \
+    && rm /tmp/cavif.deb
