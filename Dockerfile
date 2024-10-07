@@ -1,11 +1,11 @@
 FROM php:7.4-apache-buster
 
-MAINTAINER Alexander Harchenko <morontt@gmail.com>
+LABEL org.opencontainers.image.authors="Alexander Kharchenko <morontt@yandex.ru>"
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 ENV PHP_CPPFLAGS="$PHP_CPPFLAGS -std=c++11"
-ENV TZ "Europe/Moscow"
-ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV TZ="Europe/Moscow"
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
@@ -26,5 +26,4 @@ RUN cp ${PHP_INI_DIR}/php.ini-production ${PHP_INI_DIR}/php.ini \
 RUN a2enmod rewrite remoteip && a2dismod deflate -f
 
 RUN set -x && curl -sS https://getcomposer.org/installer | php \
-    && mv composer.phar /usr/local/bin/composer \
-    && composer self-update 2.2.9
+    && mv composer.phar /usr/local/bin/composer
