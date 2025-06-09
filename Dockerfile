@@ -1,4 +1,4 @@
-FROM php:7.4-apache-buster
+FROM php:8.2-apache-bookworm
 
 LABEL org.opencontainers.image.authors="Alexander Kharchenko <morontt@yandex.ru>"
 
@@ -26,4 +26,5 @@ RUN cp ${PHP_INI_DIR}/php.ini-production ${PHP_INI_DIR}/php.ini \
 RUN a2enmod rewrite remoteip && a2dismod deflate -f
 
 RUN set -x && curl -sS https://getcomposer.org/installer | php \
-    && mv composer.phar /usr/local/bin/composer
+    && mv composer.phar /usr/local/bin/composer \
+    && git config --global --add safe.directory /var/www/html
