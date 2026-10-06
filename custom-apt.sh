@@ -8,6 +8,7 @@ apt-get update && apt-get install -y --no-install-recommends \
     python3-setuptools \
     python3-pygments \
     libgmp-dev \
+    libgearman-dev \
     ;
 
 apt-get clean

@@ -15,7 +15,8 @@ RUN bash /tmp/custom-apt.sh
 RUN docker-php-ext-install -j$(nproc) intl zip pdo_mysql opcache \
     gmp \
     && pecl install imagick \
-    && docker-php-ext-enable imagick
+    && pecl install gearman \
+    && docker-php-ext-enable imagick gearman
 
 COPY ./.bashrc /root/.bashrc
 RUN cp ${PHP_INI_DIR}/php.ini-production ${PHP_INI_DIR}/php.ini \
