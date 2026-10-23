@@ -1,4 +1,4 @@
-FROM php:8.2-apache-bookworm
+FROM php:8.4-apache-bookworm
 
 LABEL org.opencontainers.image.authors="Alexander Kharchenko <morontt@yandex.ru>"
 
